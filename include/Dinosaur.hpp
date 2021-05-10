@@ -16,6 +16,7 @@ private:
 
 public:
     Dinosaur();
+    Dinosaur(String, String, String, String, String);
     String getName() const;
     String getType() const;
     String getEra() const;
