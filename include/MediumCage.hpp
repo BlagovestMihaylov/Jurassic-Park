@@ -6,19 +6,16 @@
 #include "Vector.hpp"
 #include "Dinosaur.hpp"
 
-class SmallCage
-{
+#include "Cage.hpp"
 
+class MediumCage : public Cage
+{
 private:
-    String climat;
-    String era;
-    const size_t size = 3;
-    Vector<Dinosaur> dinos;
+    size_t mediumSize = 1;
 
 public:
-    void adDino(Dinosaur);
-    void removeDino(Dinosaur);
-    void removeDino(size_t);
+    MediumCage();
+    MediumCage(String, String, size_t);
 };
 
 #endif

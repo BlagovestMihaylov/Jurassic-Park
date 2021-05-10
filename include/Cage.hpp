@@ -6,10 +6,11 @@
 
 class Cage
 {
-private:
+protected:
 String climat;
 String era;
 Vector<Dinosaur> dinos;
+size_t cageSize;
 
 public:
 Cage();
