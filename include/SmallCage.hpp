@@ -12,7 +12,7 @@ class SmallCage
 private:
     String climat;
     String era;
-    const size_t size = 1;
+    const size_t maxSize = 1;
     Vector<Dinosaur> dinos;
 
 public:
