@@ -3,6 +3,7 @@
 
 #include "String.hpp"
 #include <iostream>
+#include <fstream>
 
 class Dinosaur
 {
@@ -30,6 +31,8 @@ public:
     void setClass(String);
     void setSex(String);
     void setFood(String);
+
+    friend std::ostream &operator<<(std::ostream &, Dinosaur &);
 };
 
 #endif

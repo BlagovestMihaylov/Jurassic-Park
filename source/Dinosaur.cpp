@@ -55,3 +55,45 @@ void Dinosaur::setType(String _type)
 {
     DinoType = _type;
 }
+
+String Dinosaur::getClass() const
+{
+    return DinoClass;
+}
+
+String Dinosaur::getEra() const
+{
+    return DinoEra;
+}
+
+String Dinosaur::getFood() const
+{
+    return DinoFood;
+}
+
+String Dinosaur::getName() const
+{
+    return DinoName;
+}
+
+String Dinosaur::getSex() const
+{
+    return DinoSex;
+}
+
+String Dinosaur::getType() const
+{
+    return DinoType;
+}
+
+std::ostream &operator<<(std::ostream &out, const Dinosaur &dinosaur)
+{
+    out << "Name: " << dinosaur.getName() << std::endl
+        << "Gender: " << dinosaur.getSex() << std::endl
+        << "Era: " << dinosaur.getEra() << std::endl
+        << "Type: " << dinosaur.getType() << std::endl
+        << "Class: " << dinosaur.getClass() << std::endl
+        << "Food: " << dinosaur.getFood() << std::endl
+        << std::endl;
+    return out;
+}
