@@ -17,16 +17,41 @@ Dinosaur::Dinosaur(String _name, String _class, String _type, String _era, Strin
     DinoType = _type;
     DinoEra = _era;
     DinoSex = _sex;
-    if(DinoClass == "Herbivore") DinoFood = "Grass";
-    if(DinoClass == "Carnivore" || DinoClass == "Flying") DinoFood = "Meat";
-    if(DinoClass == "Aquantic") DinoFood = "Fish";
-    
+    if (DinoClass == "Herbivore")
+        DinoFood = "Grass";
+    if (DinoClass == "Carnivore" || DinoClass == "Flying")
+        DinoFood = "Meat";
+    if (DinoClass == "Aquantic")
+        DinoFood = "Fish";
 }
 
-void Dinosaur::setClass(String _class) 
+void Dinosaur::setClass(String _class)
 {
     DinoClass = _class;
-    if(DinoClass == "Herbivore") DinoFood = "Grass";
-    if(DinoClass == "Carnivore" || DinoClass == "Flying") DinoFood = "Meat";
-    if(DinoClass == "Aquantic") DinoFood = "Fish";
+    if (DinoClass == "Herbivore")
+        DinoFood = "Grass";
+    if (DinoClass == "Carnivore" || DinoClass == "Flying")
+        DinoFood = "Meat";
+    if (DinoClass == "Aquantic")
+        DinoFood = "Fish";
+}
+
+void Dinosaur::setEra(String _era)
+{
+    DinoEra = _era;
+}
+
+void Dinosaur::setName(String _name)
+{
+    DinoName = _name;
+}
+
+void Dinosaur::setSex(String _sex)
+{
+    DinoSex = _sex;
+}
+
+void Dinosaur::setType(String _type)
+{
+    DinoType = _type;
 }
