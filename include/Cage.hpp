@@ -1,3 +1,7 @@
+#ifndef CAGE_HPP
+#define CAGE_HPP
+
+
 #include <iostream>
 #include "Dinosaur.hpp"
 #include "String.hpp"
@@ -21,3 +25,5 @@ void removeDino(size_t);
 
 
 };
+
+#endif
