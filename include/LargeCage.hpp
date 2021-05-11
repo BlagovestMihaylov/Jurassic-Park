@@ -11,7 +11,7 @@
 class LargeCage : public Cage
 {
 private:
-size_t largeSize = 1;
+size_t largeSize = 10;
 
 public:
 LargeCage();

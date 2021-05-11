@@ -1,4 +1,6 @@
 #include "../include/Dinosaur.hpp"
+#include "../include/io.hpp"
+
 
 Dinosaur::Dinosaur()
 {
@@ -13,10 +15,10 @@ Dinosaur::Dinosaur()
 Dinosaur::Dinosaur(String _name, String _class, String _type, String _era, String _sex)
 {
     DinoName = _name;
-    DinoClass = _class; //Herbivore, Carnivore, Flying, Aquantic
+    DinoClass =  DinoClassCheck(_class); //Herbivore, Carnivore, Flying, Aquantic
     DinoType = _type;
-    DinoEra = _era;
-    DinoSex = _sex;
+    DinoEra = DinoEraCheck(_era);
+    DinoSex = DinoSexCheck(_sex);
     if (DinoClass == "Herbivore")
         DinoFood = "Grass";
     if (DinoClass == "Carnivore" || DinoClass == "Flying")

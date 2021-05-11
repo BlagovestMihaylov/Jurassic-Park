@@ -8,12 +8,7 @@
 
 int main()
 {
-    String ehoo = "Dino";
-    String eh2 = DinoClassCheck(ehoo);
-    std::cout << eh2 << std::endl;
+    //Dinosaur Dino1("Martin", "Gender", "Hello", "There", "World");
 
-    String s1;
-    s1 = "Hello\n";
-    std::cout << s1;
-    return 0;
+    
 }
