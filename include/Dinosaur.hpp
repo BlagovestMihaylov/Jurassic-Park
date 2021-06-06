@@ -32,7 +32,7 @@ public:
     void setSex(String);
     void setFood(String);
 
-    friend std::ostream &operator<<(std::ostream &, Dinosaur &);
+    friend std::ostream &operator<<(std::ostream &,const Dinosaur &);
 };
 
 #endif

@@ -297,6 +297,7 @@ std::ostream &operator<<(std::ostream &out, Vector<T> const &obj)
 {
     for (unsigned i = 0; i < obj.size(); i++)
     {
+        out << i <<": \n";
         out << obj[i];
     }
     return out;
