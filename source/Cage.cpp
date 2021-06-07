@@ -94,17 +94,31 @@ void Cage::addDinoConsole()
 {
     Dinosaur temp;
     String str;
+    std::cout << "Enter Dino's name: ";
     std::cin >> str;
     temp.setName(str);
+    std::cout << "Enter " << temp.getName() << "'s class: ";
     std::cin >> str;
     temp.setClass(str);
+    std::cout << "Enter " << temp.getName() << "'s era: ";
     std::cin >> str;
     temp.setEra(str);
+    std::cout << "Enter " << temp.getName() << "'s gender: ";
     std::cin >> str;
     temp.setSex(str);
+    std::cout << "Enter " << temp.getName() << "'s type: ";
     std::cin >> str;
     temp.setType(str);
+    std::cout << temp.getName() << "'s class is " << temp.getClass() << " so their food is " << temp.getFood() << std::endl;
     dinos.push(temp);
+}
+
+void Cage::showCageDetails() const
+{
+    std::cout << "Cage's climate " << climat << "\n";
+    std::cout << "Cage's era " << era << "\n";
+    std::cout << "Cage's size " << cageSize << "\n";
+    std::cout << "Cage's type " << cageType << "\n";
 }
 
 void Cage::serialize(std::ofstream &ofs) const
@@ -119,6 +133,11 @@ void Cage::serialize(std::ofstream &ofs) const
     ofs << era << "\n";
     ofs << cageSize << "\n";
     ofs << cageType << "\n";
+
+    for (int i = 0; i < dinos.size(); i++)
+    {
+        dinos[i].serialize(ofs);
+    }
 
     if (ofs.good())
     {

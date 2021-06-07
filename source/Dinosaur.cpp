@@ -2,38 +2,38 @@
 
 Dinosaur::Dinosaur()
 {
-    DinoClass = "Unknown";
-    DinoEra = "Unknown";
-    DinoFood = "Unknown";
-    DinoName = "Unknown";
-    DinoSex = "Unknown";
-    DinoType = "Unknown";
+    DinoClass = "UNKNOWN";
+    DinoEra = "UNKNOWN";
+    DinoFood = "UNKNOWN";
+    DinoName = "UNKNOWN";
+    DinoSex = "UNKNOWN";
+    DinoType = "UNKNOWN";
 }
 
 Dinosaur::Dinosaur(String _name, String _class, String _type, String _era, String _sex)
 {
     DinoName = _name;
-    DinoClass = _class; // need //Herbivore, Carnivore, Flying, Aquantic
-    DinoType = _type; // need
-    DinoEra = _era; //need
-    DinoSex = _sex; //need
-    if (DinoClass == "Herbivore")
-        DinoFood = "Grass";
-    if (DinoClass == "Carnivore" || DinoClass == "Flying")
-        DinoFood = "Meat";
-    if (DinoClass == "Aquantic")
-        DinoFood = "Fish";
+    DinoClass = _class; // need //HERBIVORE, CARNICORE, Flying, AQUATIC
+    DinoType = _type;   // need
+    DinoEra = _era;     //need
+    DinoSex = _sex;     //need
+    if (DinoClass == "HERBIVORE")
+        DinoFood = "GRASS";
+    if (DinoClass == "CARNIVORE" || DinoClass == "FLYING")
+        DinoFood = "MEAT";
+    if (DinoClass == "AQUATIC")
+        DinoFood = "FISH";
 }
 
 void Dinosaur::setClass(String _class)
 {
     DinoClass = _class; // need
-    if (DinoClass == "Herbivore")
-        DinoFood = "Grass";
-    if (DinoClass == "Carnivore" || DinoClass == "Flying")
-        DinoFood = "Meat";
-    if (DinoClass == "Aquantic")
-        DinoFood = "Fish";
+    if (DinoClass == "HERBIVORE")
+        DinoFood = "GRASS";
+    if (DinoClass == "CARNIVORE" || DinoClass == "FLYING")
+        DinoFood = "MEAT";
+    if (DinoClass == "AQUATIC")
+        DinoFood = "FISH";
 }
 
 void Dinosaur::setEra(String _era)
@@ -43,7 +43,7 @@ void Dinosaur::setEra(String _era)
 
 void Dinosaur::setName(String _name)
 {
-    DinoName = _name; 
+    DinoName = _name;
 }
 
 void Dinosaur::setSex(String _sex)
@@ -58,7 +58,7 @@ void Dinosaur::setType(String _type)
 
 String Dinosaur::getClass() const
 {
-    return DinoClass; 
+    return DinoClass;
 }
 
 String Dinosaur::getEra() const
@@ -96,4 +96,29 @@ std::ostream &operator<<(std::ostream &out, const Dinosaur &dinosaur)
         << "Food: " << dinosaur.DinoFood << std::endl
         << std::endl;
     return out;
+}
+
+void Dinosaur::serialize(std::ofstream &ofs) const
+{
+    if (!ofs.is_open())
+    {
+        std::cout << "File was not opened!\n";
+        return;
+    }
+
+    ofs << DinoName << "\n";
+    ofs << DinoClass << "\n";
+    ofs << DinoEra << "\n";
+    ofs << DinoType << "\n";
+    ofs << DinoSex << "\n";
+    ofs << DinoFood << "\n";
+
+    if (ofs.good())
+    {
+        std::cout << "Successful!" << std::endl;
+    }
+    else
+    {
+        std::cout << "Error!" << std::endl;
+    }
 }
