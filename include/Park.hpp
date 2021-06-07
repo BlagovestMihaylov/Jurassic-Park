@@ -8,19 +8,24 @@ class Park
 private:
     Vector<Cage> world;
 
-    size_t food;
+    size_t grassFood;
+    size_t fishFood;
+    size_t meatFood;
 
-    void addCageIfThereIsNotAnyForTheNewDino();
+    void addCageIfThereIsNotAnyForTheNewDino(Dinosaur);
     void showCages();
+    Cage randomCage();
 
 public:
+    Park();
+    Park(size_t cntCages);
+    void showJurassicWorld() const;
+    void addDino();
+    void removeDino();
+    void addCage();
+    void addRandomCage();
 
-void showJurassicWorld() const;
-void addDino();
-void removeDino();
-void addCage();
-
-
+    
 };
 
 #endif
