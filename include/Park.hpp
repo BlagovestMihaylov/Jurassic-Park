@@ -11,9 +11,10 @@ private:
     size_t grassFood;
     size_t fishFood;
     size_t meatFood;
-
+    size_t personal;
+    bool isDinoTypeComparableWithCageClimate(String dType, String cClimate);
     void addCageIfThereIsNotAnyForTheNewDino(Dinosaur);
-    void showCages();
+
     Cage randomCage();
 
 public:
@@ -22,10 +23,11 @@ public:
     void showJurassicWorld() const;
     void addDino();
     void removeDino();
-    void addCage();
+    void addCage(Cage);
+    void showCages() const;
+    void addCage(String, String, size_t);
+    void addCageFromConsole();
     void addRandomCage();
-
-    
 };
 
 #endif

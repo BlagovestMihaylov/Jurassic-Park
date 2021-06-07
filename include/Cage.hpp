@@ -31,7 +31,8 @@ public:
     void setSize(size_t);
 
     void showDinos() const;
+    void showCageDetails() const;
 
-    void serialize(std::ofstream& ofs) const;
-    void deserialize(std::ifstream& ifs);
+    void serialize(std::ofstream &ofs) const;
+    void deserialize(std::ifstream &ifs);
 };

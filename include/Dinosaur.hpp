@@ -33,6 +33,7 @@ public:
     void setFood(String);
 
     friend std::ostream &operator<<(std::ostream &,const Dinosaur &);
+    void serialize(std::ofstream& ofs) const;
 };
 
 #endif
