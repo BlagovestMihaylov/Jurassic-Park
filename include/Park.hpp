@@ -14,7 +14,6 @@ private:
     size_t personal;
     bool isDinoTypeComparableWithCageClimate(String dType, String cClimate);
     void addCageIfThereIsNotAnyForTheNewDino(Dinosaur);
-
     Cage randomCage();
 
 public:
@@ -22,12 +21,15 @@ public:
     Park(size_t cntCages);
     void showJurassicWorld() const;
     void addDino();
+    void addDino(Dinosaur);
     void removeDino();
     void addCage(Cage);
     void showCages() const;
     void addCage(String, String, size_t);
     void addCageFromConsole();
     void addRandomCage();
+
+    void serialize(std::ofstream &ofs) const;
 };
 
 #endif

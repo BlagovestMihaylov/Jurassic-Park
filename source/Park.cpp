@@ -60,6 +60,15 @@ Park::Park()
     }
 }
 
+void Park::showJurassicWorld() const
+{
+    for (int i = 0; i < world.size(); i++)
+    {
+        world[i].showCageDetails();
+        world[i].showDinos();
+    }
+}
+
 Park::Park(size_t _cages)
 {
     for (int i = 0; i < _cages; ++i)
@@ -126,6 +135,44 @@ void Park::showCages() const
     }
 }
 
-void Park::addDino()
+void Park::removeDino()
 {
+    showJurassicWorld();
+    size_t temp;
+    std::cout << "Select which cage is your dino: ";
+    std::cin >> temp;
+    size_t temp2 = temp;
+    world[temp].showDinos();
+    std::cout << "Select dino: ";
+    std::cin >> temp;
+    world[temp2].removeDino(temp - 1);
+    std::cout << "Deleted\n";
+}
+
+void Park::addDino(Dinosaur dino)
+{
+    bool flag = false;
+    for (int i = 0; i < world.size(); i++)
+    {
+        if (isDinoTypeComparableWithCageClimate(dino.getClass(), world[i].getClimate()) && dino.getEra() == world[i].getEra())
+        {
+            flag = true;
+            world[i].addDino(dino);
+            break;
+        }
+    }
+    if (flag == false)
+    {
+        addCageIfThereIsNotAnyForTheNewDino(dino);
+        world[world.size()].addDino(dino);
+    }
+}
+
+void Park::serialize(std::ofstream &ofs) const
+{
+    for (int i = 0; i < world.size(); i++)
+    {
+        world[i].serialize(ofs);
+        ofs << "\n";
+    }
 }

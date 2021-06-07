@@ -75,7 +75,8 @@ void Cage::setSize(size_t _size)
 
 void Cage::addDino(Dinosaur Dino)
 {
-    dinos.push(Dino);
+    if (dinos.free())
+        dinos.push(Dino);
 }
 
 void Cage::removeDino(size_t index)
