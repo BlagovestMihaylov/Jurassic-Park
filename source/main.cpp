@@ -9,9 +9,11 @@ int main()
   Dinosaur dino5("THERE", "FLYING", "AYTOZAVROS", "CRETACEOUS", "FEMALE");
   Dinosaur dino6("HELLO", "FLYING", "AYTOZAVROS", "CRETACEOUS", "FEMALE");
   // //std::cout<<dino1<<std::endl;
-  // Cage cg1("HELLO", "THERE", 3);
+  Cage cg1("HYDRO", "JURASSIC", 3);
+  cg1.addDinoConsole();
   // Cage cg2;
 
+  srand(time(0));
   //  cg1.addDino(dino1);
   //cg2.addDinoConsole();
 
@@ -22,16 +24,17 @@ int main()
 
   Park parking;
   //parking.showCages();
-  parking.showCages();
-  parking.addDino(dino1);
-  parking.addDino(dino2);
-  parking.addDino(dino3);
-  parking.addDino(dino4);
-  parking.addDino(dino5);
-  parking.addDino(dino6);
-  parking.showJurassicWorld();
-  parking.removeDino();
-  parking.showJurassicWorld();
+  //parking.addDino();
+  // parking.addDino(dino2);
+  // parking.addDino(dino3);
+  // parking.addDino(dino4);
+  // parking.addDino(dino5);
+  // parking.addDino(dino6);
+  // parking.showJurassicWorld();
+  // parking.removeDino();
+  // parking.showJurassicWorld();
+  // parking.checkFood();
+  // parking.checkPersonal();
 
   return 0;
 }

@@ -20,7 +20,7 @@ Cage Park::randomCage()
         temp.setSize(3);
     else
         temp.setSize(10);
-
+    srand(time(0));
     //////////////////////////
     int climate = rand() % 3;
     if (climate == 0)
@@ -30,6 +30,7 @@ Cage Park::randomCage()
     else
         temp.setClimate("AERIAL");
 
+    srand(time(0));
     //////////////////////////////
     int era = rand() % 3;
     if (era = 0)
@@ -39,6 +40,7 @@ Cage Park::randomCage()
     if (era = 2)
         temp.setEra("CREATECEOUS");
 
+    srand(time(0));
     return temp;
 }
 
@@ -49,7 +51,7 @@ void Park::addRandomCage()
 
 Park::Park()
 {
-    int maxCages = rand() % 11;
+    int maxCages = rand() % 11 + 3;
     for (int i = 0; i < maxCages; ++i)
     {
         addRandomCage();
@@ -60,11 +62,37 @@ Park::Park()
     }
 }
 
+void Park::checkFood() const
+{
+    std::cout << "Grass: " << grassFood << std::endl;
+    std::cout << "Meat: " << meatFood << std::endl;
+    std::cout << "Fish: " << fishFood << std::endl;
+}
+
+void Park::checkPersonal() const
+{
+    std::cout << "There are " << personal << " people working here\n";
+}
+
+void Park::addFood()
+{
+    grassFood++;
+    fishFood++;
+    meatFood++;
+}
+
+void Park::addPersonal()
+{
+    personal += 4;
+}
+
 void Park::showJurassicWorld() const
 {
     for (int i = 0; i < world.size(); i++)
     {
+        std::cout << "Cage Number:" << i << std::endl;
         world[i].showCageDetails();
+        std::cout << "Dinos here: \n";
         world[i].showDinos();
     }
 }
@@ -129,7 +157,7 @@ void Park::showCages() const
 {
     for (int i = 0; i < world.size(); i++)
     {
-        std::cout << "Cage number: " << i + 1 << std::endl;
+        std::cout << "Cage number: " << i << std::endl;
         world[i].showCageDetails();
         std::cout << std::endl;
     }
@@ -145,7 +173,7 @@ void Park::removeDino()
     world[temp].showDinos();
     std::cout << "Select dino: ";
     std::cin >> temp;
-    world[temp2].removeDino(temp - 1);
+    world[temp2].removeDino(temp);
     std::cout << "Deleted\n";
 }
 
@@ -166,6 +194,15 @@ void Park::addDino(Dinosaur dino)
         addCageIfThereIsNotAnyForTheNewDino(dino);
         world[world.size()].addDino(dino);
     }
+}
+
+void Park::addDino()
+{
+    size_t cg = 0;
+    std::cout << "Select cage: \n";
+    showCages();
+    std::cin >> cg;
+    world[cg].addDinoConsole();
 }
 
 void Park::serialize(std::ofstream &ofs) const

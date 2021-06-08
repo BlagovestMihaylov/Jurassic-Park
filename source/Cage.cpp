@@ -93,6 +93,7 @@ void Cage::showDinos() const
 
 void Cage::addDinoConsole()
 {
+
     Dinosaur temp;
     String str;
     std::cout << "Enter Dino's name: ";
@@ -100,12 +101,33 @@ void Cage::addDinoConsole()
     temp.setName(str);
     std::cout << "Enter " << temp.getName() << "'s class: ";
     std::cin >> str;
+    while (!((str == "HERBIVORE" && climat == "LAND") || (str == "CARNIVORE" && climat == "LAND") || (str == "FLYING" && climat == "AERIAL") || (str == "AQUATIC" && climat == "HYDRO")))
+    {
+        std::cout << "YOU CANNOT PUT " << temp.getName() << " WHO IS " << str << " IN CAGE THAT HAS CLIMAT: " << climat << "\n";
+        std::cout << "Enter " << temp.getName() << "'s correct class: ";
+        std::cin >> str;
+    }
+
     temp.setClass(str);
     std::cout << "Enter " << temp.getName() << "'s era: ";
     std::cin >> str;
+    while (!(era == str))
+    {
+        std::cout << "YOU CANNOT PUT " << temp.getName() << " WHO IS FROM " << str << " IN CAGE FROM " << era << "\n";
+        std::cout << "Enter " << temp.getName() << "'s correct era: ";
+        std::cin >> str;
+    }
+
     temp.setEra(str);
     std::cout << "Enter " << temp.getName() << "'s gender: ";
     std::cin >> str;
+    while (!(str == "FEMALE" || str == "MALE"))
+    {
+        std::cout << "SORRY, WE DONT SUPPORT LGTVHD...\n";
+        std::cout << "Enter " << temp.getName() << "'s correct gender: ";
+        std::cin >> str;
+    }
+
     temp.setSex(str);
     std::cout << "Enter " << temp.getName() << "'s type: ";
     std::cin >> str;
