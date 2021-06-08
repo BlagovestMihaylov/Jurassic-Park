@@ -30,8 +30,8 @@ int main()
   std::ofstream out("CagesOut.txt");
   Park parking;
 
-  std::cout << "Welcome to the Jurassic!\nThis is the place where the dinosaurs a alive once more\n";
-  std::cout << "Please use caps lock for all the commands\n";
+  std::cout << "Welcome to the Jurassic park!\nThis is the place where dinosaurs are brought to life again!\n";
+  std::cout << "Please use caps lock for all of the commands\n";
 
   do
   {
