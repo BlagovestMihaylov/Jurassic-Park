@@ -48,7 +48,7 @@ int main()
     {
     case 1:
     {
-      parking.addDino();
+      parking.addDinoConsole();
       break;
     }
     case 2:
@@ -79,13 +79,13 @@ int main()
     case 7:
     {
       exit = false;
-      std::cout << "Exiting";
-      std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-      std::cout << ".";
-      std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-      std::cout << ".";
-      std::this_thread::sleep_for(std::chrono::milliseconds(1500));
-      std::cout << ".";
+      std::cout << "Exiting\n";
+      // std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+      // std::cout << ".";
+      // std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+      // std::cout << ".";
+      // std::this_thread::sleep_for(std::chrono::milliseconds(1500));
+      // std::cout << ".";
       break;
     }
     default:

@@ -8,6 +8,16 @@ Cage::Cage()
     cageType = "UNKNOWN";
 }
 
+const bool Cage::full() const
+{
+    return dinos.full();
+}
+
+const bool Cage::empty() const
+{
+    return dinos.empty();
+}
+
 Cage::Cage(String _climat, String _era, size_t _size)
 {
     climat = _climat; //need

@@ -19,7 +19,8 @@ public:
     void addDino(Dinosaur);
     void addDinoConsole();
     void removeDino(size_t);
-
+    const bool empty() const;
+    const bool full() const;
     String getEra() const;
     String getClimate() const;
     String getType() const;

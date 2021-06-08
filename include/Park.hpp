@@ -14,14 +14,20 @@ private:
     size_t personal = 0;
     bool isDinoTypeComparableWithCageClimate(String dType, String cClimate);
     void addCageIfThereIsNotAnyForTheNewDino(Dinosaur);
+    String classToClimate(String dinoClass);
     Cage randomCage();
+    void showEmptyCages() const;
+    void showNonEmptyCages() const;
+    void showNonFullCages() const;
 
 public:
     Park();
     Park(size_t cntCages);
+    bool emptyPark();
     void showJurassicWorld() const;
     void addDino();
     void addDino(Dinosaur);
+    void addDinoConsole();
     void removeDino();
     void addCage(Cage);
     void showCages() const;
